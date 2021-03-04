@@ -1,7 +1,7 @@
 const primeNumber = number => {
-  const isInvalidNumber = isNaN(number) || number < 2;
+  const isInvalidNumber = !Number.isInteger(number) || number < 2;
   if (isInvalidNumber) {
-    return 'Insira um número válido, sendo ele maior ou igual a dois.';
+    return 'Insira um número válido, sendo ele inteiro, maior ou igual a dois.';
   }
   const primes = [];
   const numbers = Array(parseInt(number))
