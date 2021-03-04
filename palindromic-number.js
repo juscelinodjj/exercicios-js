@@ -11,13 +11,15 @@ const palindromicNumber = (min, max) => {
   const palindromes = [];
   for (const number of range) {
     const reverseNumber = parseInt(
-      String(number).split("").reverse().join(""));
+      String(number).split('').reverse().join(''));
     const isPalindromic = reverseNumber === number;
     if (isPalindromic) {
       palindromes.push(number);
     }
   }
-  return palindromes.join('-');
+  return palindromes[0] === undefined
+    ? 'Nenhum número palíndromo encontrado.'
+    : palindromes.join('-');
 };
 
 const result = palindromicNumber(0, 100);
