@@ -1,9 +1,9 @@
 const palindromicNumber = (min, max) => {
-  const isInvalidMin = min < 0;
-  const isInvalidMax = max < min || max === min;
+  const isInvalidMin = !Number.isInteger(min) || min < 0;
+  const isInvalidMax = !Number.isInteger(max) || max < min || max === min;
   if (isInvalidMin || isInvalidMax) {
-    return 'Insira dois números válidos, sendo o primeiro maior ou igual a zero'
-    + ' e o segundo maior que o primeiro.';
+    return 'Insira dois números válidos, sendo eles inteiros, o primeiro maior'
+    + ' ou igual a zero e o segundo maior que o primeiro.';
   }
   const range = Array((max - min) + 1)
     .fill(null)
